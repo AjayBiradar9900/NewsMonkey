@@ -33,7 +33,8 @@ const News = (props) => {
   useEffect(() => {
     document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
     updateNews();
-  }, []);
+    // eslint-disable-next-line
+  },[]);
  const fetchMoreData = async () => {
      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d093053d72bc40248998159804e0e67d&page=${page+1}&pageSize=${props.pageSize}`;
      setPage(page + 1);
